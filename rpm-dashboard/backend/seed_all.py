@@ -12,7 +12,7 @@ doctors = [
     ('Sundar','Raj','sundar@medipulse.in','sundar123','Endocrinology'),
     ('Arjun','Mehta','arjun@medipulse.in','arjun123','Neurology'),
 ]
-
+    
 doctor_ids = {}
 for fname, lname, email, password, spec in doctors:
     cur.execute('SELECT id FROM users WHERE email = %s', (email,))
