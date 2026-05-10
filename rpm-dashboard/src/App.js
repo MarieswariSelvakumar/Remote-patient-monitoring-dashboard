@@ -1906,8 +1906,8 @@ function DoctorDashboard({ addToast, liveVitals, hrData, spo2Data, bpData, patie
             }
           </div>
         </div>
-        <button className="btn-primary" onClick={() => { if(typeof setActivePage === 'function') setActivePage('appointments'); else addToast("📅", "Redirecting", "Go to Appointments tab to schedule", "info"); }}>+ Schedule Call</button>
-      </div>
+        <button className="btn-primary" onClick={() => addToast("📅", "Appointments", "Go to Appointments tab to schedule", "info")}>+ Schedule Call</button>
+                      </div>
       <div className="g4 mb20">
         <VitalCard label="❤️  Heart Rate" value={v.hr.toFixed(0)} unit="bpm" trend={v.hr > 100 ? "▲ Elevated" : v.hr < 60 ? "▼ Low" : "→ Stable"} trendClass={v.hr > 100 ? "t-danger" : "t-ok"} colorClass="vc-heart" anomaly={v.hr > 105} sparkColor="#ff2d55" sparkData={hrData} />
         <VitalCard label="🩺  Blood Pressure" value={v.bp_sys.toFixed(0)} unit={`/${v.bp_dia.toFixed(0)} mmHg`} trend={v.bp_sys > 140 ? "▲ High" : "→ Acceptable"} trendClass={v.bp_sys > 140 ? "t-warn" : "t-ok"} colorClass="vc-bp" sparkColor="#00d4ff" sparkData={bpData} />
